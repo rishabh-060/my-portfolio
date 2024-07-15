@@ -10,3 +10,9 @@ function loadingAnimation(){
 
 loadingAnimation()
 
+const menuButton = document.getElementById('menu');
+const navbarLinks = document.getElementById('nav-menu');
+
+menuButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('show');
+});

@@ -66,8 +66,13 @@ body {
     text-decoration: underline;
 }
 
-#navbar #menu{
-    visibility: hidden;
+#menu{
+    display: none;
+    cursor: pointer;
+}
+
+#navbar i{
+    font-size: 1.4rem;
 }
 
 /* Hero Section */
@@ -204,16 +209,38 @@ body {
     text-decoration: none;
 }
 
-@media (width < 550px) {
-    #nav-sec ul{ 
-        visibility: hidden;
-    }
-    #navbar #menu{
-        visibility: visible;
-    }
+@media (width < 768px) {
     #navbar h1{
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         margin-left: 0;
+    }
+    #nav-menu{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 6vh;
+        right: 0;
+        height: 94vh;
+        background-color: #007bff;
+        padding-top: 15px;
+        opacity: 0.9;
+        width: 40%;
+        padding: 10px 0;
+        text-align: center;
+        z-index: 1;
+    }
+    #navbar ul {
+        padding-top: 15px;
+    }
+    #navbar ul li {
+        border-bottom: 2px solid #fff;
+        margin: 0 8px 8px 8px; 
+    }
+    #nav-menu.show{
+        display: flex;
+    }
+    #menu{
+        display: block;
     }
     #resume{
         padding: 12px 25px;
