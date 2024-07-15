@@ -27,6 +27,7 @@ body {
     padding: 10px 0;
     position: fixed;
     width: 100%;
+    min-height: 25px;
     top: 0;
     z-index: 1000;
 }
@@ -65,7 +66,9 @@ body {
     text-decoration: underline;
 }
 
-
+#navbar #menu{
+    visibility: hidden;
+}
 
 /* Hero Section */
 #hero-img{
@@ -97,7 +100,7 @@ body {
 }
 #resume{
     background-color: #007bff;
-    margin-top: 15px;
+    margin: 15px auto;
     padding: 12px 32px;
     border-radius: 15px;
 }
@@ -138,7 +141,7 @@ body {
 /* Skills Section */
 #skills {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: #f8f9fa;
 }
 
 #skills h2 {
@@ -151,6 +154,8 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: #fff;
+    padding: 20px
 }
 
 .skills-list div {
@@ -203,6 +208,9 @@ body {
     #nav-sec ul{ 
         visibility: hidden;
     }
+    #navbar #menu{
+        visibility: visible;
+    }
     #navbar h1{
         font-size: 1.8rem;
         margin-left: 0;
@@ -216,6 +224,21 @@ body {
     #hero{
         align-items: center;
         justify-content: center;
-        padding-top: 45px;
+    }
+    #btn-option{
+        display: block;
+    }
+    .skills-list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .skills-list h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    .skills-list div {
+        width: 50%;
+        margin-bottom: 30px;
     }
 }
