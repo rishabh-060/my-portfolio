@@ -349,4 +349,7 @@ footer span{
         width: 50%;
         margin-bottom: 30px;
     }
+    #projects button{
+        padding: 0.5rem 1.8rem;
+    }
 }
