@@ -301,9 +301,9 @@ footer span{
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 6vh;
+        top: 5vh;
         right: 0;
-        height: 94vh;
+        height: calc(100vh - 24px);
         background-color: #007bff;
         padding-top: 15px;
         opacity: 0.9;
