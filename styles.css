@@ -5,6 +5,68 @@
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#main-parent-page{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #1e3042;
+}
+
+#left-aside{
+    width: 13%;
+    height: calc(100% - 25px);
+    position: relative;
+}
+
+#nav-option-text{
+    position: fixed;
+    top: 10vh;
+    width: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3vh;
+    gap: 60vh;
+}
+#nav-menu{
+    height: calc(100% - 26px);
+    list-style: none;
+}
+#nav-menu li{
+    padding-bottom: 1.5vh;
+}
+
+#nav-menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+#nav-menu li:nth-last-child(1){
+    padding-top: 44vh;
+}
+
+#nav-menu li a:hover{
+    font-size: 21px;
+    color: #007bff;
+}
+#nav-option-icon{
+    display: none;
+}
+
+#right-aside{
+    width: 84%;
+}
+
+h2{
+    color: #007bff;
+}
+
 /* Basic styles */
 body {
     font-family: Arial, sans-serif;
@@ -24,7 +86,7 @@ body {
 #navbar {
     background-color: #007bff;
     color: #fff;
-    padding: 10px 0;
+    /* padding: 0px 0; */
     position: fixed;
     width: 100%;
     min-height: 25px;
@@ -35,44 +97,20 @@ body {
 #nav-sec{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 #navbar h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-left: 20px;
     display: inline-block;
+    /* font-family: 'Dancing Script'; */
+    font-family: 'Gilroy';
 }
-
-#navbar ul {
-    list-style-type: none;
-    float: right;
-}
-
-#navbar ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-#navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-#navbar ul li a:hover {
-    text-decoration: underline;
-}
-
-#menu{
-    display: none;
-    cursor: pointer;
-}
-
-#navbar i{
-    font-size: 1.4rem;
+#navbar h1 #mr{
+    font-size: 1.7rem;
 }
 
 /* Hero Section */
@@ -83,11 +121,13 @@ body {
     border: 2px solid #007bff;
     padding: 4px;
     object-fit: cover;
+    /* object-position: top; */
     margin-bottom: 10px;
 }
 
 #hero-img:hover{
     opacity: 0.8;
+    cursor: pointer;
 }
 
 #hero {
@@ -96,26 +136,14 @@ body {
     align-items: center;
     background-color: #333;
     color: #fff;
-    text-align: center;
+    width: 100%;
+    gap: 20px;
 }
 
 #hero h2 {
     font-size: 3rem;
     margin-bottom: 20px;
-}
-#resume{
-    background-color: #007bff;
-    margin: 15px auto;
-    padding: 12px 32px;
-    border-radius: 15px;
-}
-
-#resume:hover{
-    background-color: #004cff;
-}
-
-#resume a{
-    color: #fff;
+    color: #007bff;
 }
 
 /* About Section */
@@ -171,11 +199,10 @@ body {
     font-weight: 600;
 }
 
-
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 35px;
     margin-bottom: 60px;
 }
 
@@ -184,41 +211,20 @@ body {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.project-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    object-fit: contain;
-    object-position: top;
+    justify-content: space-between;
+    padding: 10px 0;
+    height: 42vh;
+    background-color: #f0f0f0;
 }
 
-.project-item:hover img {
-    transform: scale(1.1);
+#pr-img img{
+    height: 28vh;
+    object-fit: cover;
+    object-position: center;
 }
 
-.project-item:hover .overlay {
-    opacity: 1;
-}
 
 /* Skills Section */
 #skills {
@@ -260,9 +266,14 @@ body {
 }
 
 /* Education and Experience Sections */
-#education, #experience {
-    padding: 80px 0;
+#education{
+    padding: 80px;
     background-color: #f8f9fa;
+}
+
+#experience{
+    padding: 80px 0;
+    background-color: #fff;
 }
 
 #education h2, #experience h2 {
@@ -280,10 +291,15 @@ body {
     color: #007bff;
     font-size: 35px;
     padding-right: 12px;
+    /* margin-bottom: 10px; */
 }
 
 .container a{
     text-decoration: none;
+}
+
+#contact, footer{
+    background-color: #f0f0f0;
 }
 
 footer span{
@@ -296,6 +312,8 @@ footer span{
     #navbar h1{
         font-size: 1.4rem;
         margin-left: 0;
+        width: 90%;
+        text-align: center;
     }
     #nav-menu{
         display: none;
@@ -319,14 +337,49 @@ footer span{
         border-bottom: 2px solid #fff;
         margin: 0 8px 8px 8px; 
     }
-    #nav-menu.show{
+    /* #nav-menu.show{
         display: flex;
+    } */
+
+    #nav-option-text{
+        display: none;
+    }
+    #nav-option-icon{
+        position: fixed;
+        top: 10vh;
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 3vh;
+        gap: 60vh;
+        align-items: center;
+    }
+    #nav-option-icon{
+        height: calc(100% - 26px);
+        list-style: none;
+    }
+    #nav-option-icon li{
+        padding-bottom: 1.5vh;
+    }
+    #navbar h1{
+        font-size: 1.8rem;
+    }
+    #navbar h1 #mr{
+        font-size: 1.3rem;
+    }
+    #nav-option-icon li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    #nav-option-icon li:nth-last-child(1){
+        padding-top: 44vh;
+    }
+    #right-aside{
+        width: 89%;
     }
     #menu{
         display: block;
-    }
-    #resume{
-        padding: 12px 25px;
     }
     #hero-img{
         height: 270px;
@@ -364,5 +417,20 @@ footer span{
     }
     #projects p{
         font-size: 0.6rem;
+    }
+    .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 35px;
+        margin-bottom: 60px;
+    }
+    #education .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .education-item{
+        width: 64vw;
     }
 }
