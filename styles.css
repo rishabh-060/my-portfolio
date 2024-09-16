@@ -8,20 +8,24 @@
 html, body{
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+}
+
+h2, h3{
+    color: #1e3042;
 }
 
 #main-parent-page{
     width: 100vw;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background-color: #1e3042;
+    position: relative;
 }
 
 #left-aside{
     width: 13%;
     height: calc(100% - 25px);
-    position: relative;
 }
 
 #nav-option-text{
@@ -35,11 +39,21 @@ html, body{
     gap: 60vh;
 }
 #nav-menu{
-    height: calc(100% - 26px);
+    height: calc(100% - 28px);
     list-style: none;
 }
+
+#nav-menu video{
+    height: 28px;
+    border-radius: 30%;
+    overflow: hidden;
+}
+
 #nav-menu li{
     padding-bottom: 1.5vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 #nav-menu li a{
@@ -55,16 +69,16 @@ html, body{
     font-size: 21px;
     color: #007bff;
 }
+#nav-menu-2 li a:hover{
+    font-size: 21px;
+    color: #007bff;
+}
 #nav-option-icon{
     display: none;
 }
 
 #right-aside{
-    width: 84%;
-}
-
-h2{
-    color: #007bff;
+    width: 87%;
 }
 
 /* Basic styles */
@@ -103,11 +117,12 @@ body {
 }
 
 #navbar h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin-left: 20px;
     display: inline-block;
     /* font-family: 'Dancing Script'; */
     font-family: 'Gilroy';
+    /* color: #1e3042; */
 }
 #navbar h1 #mr{
     font-size: 1.7rem;
@@ -126,7 +141,6 @@ body {
 }
 
 #hero-img:hover{
-    opacity: 0.8;
     cursor: pointer;
 }
 
@@ -141,6 +155,11 @@ body {
 }
 
 #hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+#hero h2 #title{
     font-size: 3rem;
     margin-bottom: 20px;
     color: #007bff;
@@ -317,40 +336,27 @@ footer span{
     }
     #nav-menu{
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 5vh;
-        right: 0;
-        height: calc(100vh - 24px);
-        background-color: #007bff;
-        padding-top: 15px;
-        opacity: 0.9;
-        width: 40%;
-        padding: 10px 0;
-        text-align: center;
-        z-index: 1;
     }
-    #navbar ul {
-        padding-top: 15px;
+    #nav-menu-2{
+        list-style: none;
+        height: calc(100% - 28px);
     }
-    #navbar ul li {
-        border-bottom: 2px solid #fff;
-        margin: 0 8px 8px 8px; 
-    }
-    /* #nav-menu.show{
-        display: flex;
-    } */
 
-    #nav-option-text{
-        display: none;
+    #nav-menu-2 video{
+        height: 28px;
+        border-radius: 30%;
+        overflow: hidden;
     }
+
+    /* #nav-option-text{
+        display: none;
+    } */
     #nav-option-icon{
         position: fixed;
         top: 10vh;
         width: 10%;
         display: flex;
         flex-direction: column;
-        padding-left: 3vh;
         gap: 60vh;
         align-items: center;
     }

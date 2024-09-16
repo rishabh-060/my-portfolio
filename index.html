@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="media/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> -->
 </head>
 <body>
@@ -23,27 +24,27 @@
         <div id="left-aside">
             <div id="nav-option-text">
                 <ul id="nav-menu">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Social Profiles</a></li>
-                    <li><a href="media/rishabh'sCV.docx" download>Download CV</a></li>
+                    <li><a href="#hero"><span><video src="icons/home.mp4" muted autoplay loop></video></span> Home</a></li>
+                    <li><a href="#about"><span><video src="icons/about.mp4" muted autoplay loop></video></span> About</a></li>
+                    <li><a href="#skills"><span><video src="icons/skills.mp4" muted autoplay loop></video></span> Skills</a></li>
+                    <li><a href="#projects"><span><video src="icons/projects.mp4" muted autoplay loop></video></span> Projects</a></li>
+                    <li><a href="#education"><span><video src="icons/education.mp4" muted autoplay loop></video></span> Education</a></li>
+                    <li><a href="#experience"><span><video src="icons/experience.mp4" muted autoplay loop></video></span> Experience</a></li>
+                    <li><a href="#contact"><span><video src="icons/social.mp4" muted autoplay loop></video></span> Social Profiles</a></li>
+                    <li><a href="media/rishabh'sCV.docx" download><span><video src="icons/cv.mp4" muted autoplay loop></video></span> Download CV</a></li>
                 </ul>
             </div>
 
             <div id="nav-option-icon">
                 <ul id="nav-menu-2">
-                    <li><a href="#hero"><i class="ri-home-2-line"></i></a></li>
-                    <li><a href="#about"><i class="ri-user-search-line"></i></a></li>
-                    <li><a href="#skills"><i class="ri-braces-fill"></i></a></li>
-                    <li><a href="#projects"><i class="ri-apps-2-line"></i></a></li>
-                    <li><a href="#education"><i class="ri-edit-line"></i></a></li>
-                    <li><a href="#experience"><i class="ri-shield-star-line"></i></a></li>
-                    <li><a href="#contact"><i class="ri-pages-line"></i></a></li>
-                    <li><a href="media/rishabh'sCV.docx" download>CV</a></li> <!--<i class="ri-download-2-fill"></i?-->
+                    <li><a href="#hero"><span><video src="icons/home.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#about"><span><video src="icons/about.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#skills"><span><video src="icons/skills.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#projects"><span><video src="icons/projects.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#education"><span><video src="icons/education.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#experience"><span><video src="icons/experience.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="#contact"><span><video src="icons/social.mp4" muted autoplay loop></video></span></a></li>
+                    <li><a href="media/rishabh'sCV.docx" download id="cv"><span><video src="icons/cv.mp4" muted autoplay loop></video></span></a></li> <!--?-->
                 </ul>
             </div>
         </div>
@@ -52,12 +53,10 @@
                 <!-- Hero Section -->
             <section id="hero">
                 <div class="container">
+
                     <img src="media/hero-pr.jpg" alt="profile-image" id="hero-img">
-                    <h2>Practicener</h2>
+                    <h2>I'm a <span id="title">Developer</span></h2> <!-- || Consultant-->
                     <p>I’m a computer science student with a knack for programming and a curiosity for new technologies. I enjoy taking on new challenges and continuously expanding my tech expertise.</p>
-                    <!-- <div id="resume">
-                        <a href="media/rishabh'sCV.docx" download>Download Resume</a>
-                    </div> -->
                 
                 </div>
             </section>
@@ -66,7 +65,7 @@
             <section id="about">
                 <div class="container">
                     <h2>About Me</h2>
-                    <p>Hello, I am Rishabh Verma. Currently I'm final year student of Master's of Computer Application (MCA) @ SRM University, Barabanki. A part of that I'ad completed Bachelor of Science(Computer Application) from BND PG College, Kanpur.</p>
+                    <p>Hello, I'm Rishabh Verma, a final-year Master's student pursuing a Master of Computer Applications (MCA) at SRM University, Barabanki. I hold a Bachelor of Science degree in Computer Applications from BND PG College, affiliated with Chhatrapati Shahu Ji Maharaj University, Kanpur, India. My academic journey has provided me with a solid foundation in software development, programming, and IT solutions, enabling me to develop a strong technical acumen. I am passionate about leveraging my skills to solve complex technical challenges and contribute to the ever-evolving field of information technology.</p>
                 </div>
             </section>
         
@@ -95,7 +94,8 @@
                         <div>
                             <h3>Tools & Technologies</h3>
                             <ul>
-                                <li>Git</li>
+                                <li>Git (Basic)</li>
+                                <li>SQL (Basic)</li>
                             </ul>
                         </div>
                     </div>
@@ -112,6 +112,7 @@
                                 <h3>Employee Management System</h3>
                                 <h5>Tools : Python, Tikinter library & SQL</h5>
                                 <h5>In collaboration with Coding Blocks, Lucknow</h5>
+                                <a href=""></a>
                             </div>
                             <div id="pr-img">
                                 <img src="./media/emp_sys.png" alt="">
@@ -222,12 +223,19 @@
 
 
     <!-- JavaScript for smooth scrolling and project toggling -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <!-- Gsap for Animation -->
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     ></script>
+
+    <!-- ScrollTrigger For animation on scrolling -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- JS file -->
     <script src="script.js"></script>
 </body>
 </html>
