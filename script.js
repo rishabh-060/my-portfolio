@@ -94,8 +94,10 @@ function loadingAnimation(){
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
             markers: true,
-            scroller : "#right-aside",
+            scroller : "#right-aside",,
+            markers: false
         }
+        
     })
     
     gsap.from("#pr-img img",{
@@ -111,7 +113,8 @@ function loadingAnimation(){
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
             markers: true,
-            scroller : "#right-aside"
+            scroller : "#right-aside",
+            markers: false
         }
     })
 
@@ -127,7 +130,8 @@ function loadingAnimation(){
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
             markers: true,
-            scroller : "#right-aside"
+            scroller : "#right-aside",
+            markers: false
         }
     })
 
@@ -143,7 +147,8 @@ function loadingAnimation(){
             end: 'bottom 70%', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
             markers: true,
-            scroller : "#right-aside"
+            scroller : "#right-aside",
+            markers: false
         }
     })
     
@@ -159,11 +164,13 @@ function loadingAnimation(){
             end: 'bottom 90%', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
             markers: true,
-            scroller : "#right-aside"
+            scroller : "#right-aside",
+            markers: false
         }
     })
 
 }
+
 
 loadingAnimation()
 

@@ -20,12 +20,12 @@ h2, h3{
     display: flex;
     justify-content: space-between;
     background-color: #1e3042;
-    position: relative;
 }
 
 #left-aside{
     width: 13%;
     height: calc(100% - 25px);
+    position: relative;
 }
 
 #nav-option-text{
@@ -329,7 +329,7 @@ footer span{
 
 @media (width < 768px) {
     #navbar h1{
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         margin-left: 0;
         width: 90%;
         text-align: center;
@@ -347,23 +347,18 @@ footer span{
         border-radius: 30%;
         overflow: hidden;
     }
-
-    /* #nav-option-text{
-        display: none;
-    } */
+    
     #nav-option-icon{
         position: fixed;
         top: 10vh;
-        width: 10%;
+        width: 13%;
         display: flex;
         flex-direction: column;
-        gap: 60vh;
+        justify-content: center;
         align-items: center;
+        gap: 60vh;
     }
-    #nav-option-icon{
-        height: calc(100% - 26px);
-        list-style: none;
-    }
+    
     #nav-option-icon li{
         padding-bottom: 1.5vh;
     }
