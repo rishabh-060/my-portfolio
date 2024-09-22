@@ -93,8 +93,8 @@ function loadingAnimation(){
             start: 'top bottom', // When the top of the section hits the bottom of the viewport
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
-            markers: true,
-            scroller : "#right-aside",,
+            // markers: true,
+            scroller : "#right-aside",
             markers: false
         }
         
@@ -112,7 +112,7 @@ function loadingAnimation(){
             start: 'top bottom', // When the top of the section hits the bottom of the viewport
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
-            markers: true,
+            // markers: true,
             scroller : "#right-aside",
             markers: false
         }
@@ -129,7 +129,7 @@ function loadingAnimation(){
             start: 'top bottom', // When the top of the section hits the bottom of the viewport
             end: 'bottom top', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
-            markers: true,
+            // markers: true,
             scroller : "#right-aside",
             markers: false
         }
@@ -146,7 +146,7 @@ function loadingAnimation(){
             start: 'top 70%', // When the top of the section hits the bottom of the viewport
             end: 'bottom 70%', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
-            markers: true,
+            // markers: true,
             scroller : "#right-aside",
             markers: false
         }
@@ -163,7 +163,7 @@ function loadingAnimation(){
             start: 'top 90%', // When the top of the section hits the bottom of the viewport
             end: 'bottom 90%', // When the bottom of the section hits the top of the viewport
             scrub: true, // Smooth animation linked to scroll progress
-            markers: true,
+            // markers: true,
             scroller : "#right-aside",
             markers: false
         }
