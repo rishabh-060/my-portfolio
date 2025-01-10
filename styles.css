@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html, body{
@@ -38,6 +39,7 @@ h2, h3{
     padding-left: 3vh;
     gap: 60vh;
 }
+
 #nav-menu{
     height: calc(100% - 28px);
     list-style: none;
@@ -61,9 +63,7 @@ h2, h3{
     text-decoration: none;
     font-size: 20px;
 }
-#nav-menu li:nth-last-child(1){
-    padding-top: 44vh;
-}
+
 
 #nav-menu li a:hover{
     font-size: 21px;
@@ -99,8 +99,11 @@ body {
 /* Navigation */
 #navbar {
     background-color: #007bff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     color: #fff;
-    /* padding: 0px 0; */
     position: fixed;
     width: 100%;
     min-height: 25px;
@@ -112,31 +115,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 #navbar h1 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     margin-left: 20px;
     display: inline-block;
-    /* font-family: 'Dancing Script'; */
-    font-family: 'Gilroy';
-    /* color: #1e3042; */
+    text-align: center;
+    width: 90vw;
 }
 #navbar h1 #mr{
     font-size: 1.7rem;
 }
 
+
 /* Hero Section */
 #hero-img{
-    height: 310px;
+    height: 260px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 2px solid #007bff;
-    padding: 4px;
+    padding: 6px;
     object-fit: cover;
-    /* object-position: top; */
+    object-position: top;
     margin-bottom: 10px;
 }
 
@@ -148,6 +152,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #333;
     color: #fff;
     width: 100%;
@@ -159,6 +164,7 @@ body {
     margin-bottom: 20px;
     color: #fff;
 }
+
 #hero h2 #title{
     font-size: 3rem;
     margin-bottom: 20px;
@@ -168,6 +174,7 @@ body {
 /* About Section */
 #about {
     background-color: #fff;
+    /* background-color: #f8f9fa; */
     padding: 80px 0;
 }
 
@@ -183,6 +190,51 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
+
+/* Certifications section */
+#certification{
+    background-color: #fff;
+    padding: 80px 0;
+    position: relative;
+}
+#certification h2{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.certificate-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    height: fit-content;
+    background-color: #f0f0f0;
+}
+#certification h3{
+    font-size: 1.3rem;
+    margin: 12px 0;
+    text-decoration: underline;
+    text-align: center;
+}
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 35px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+#cr-img img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 2px 0;
+    border-radius: inherit;
+}
+
 
 /* Projects Section */
 #projects{
@@ -202,11 +254,12 @@ body {
     font-size: 1.3rem;
     margin: 12px 0;
     text-decoration: underline;
+    text-align: center;
 }
 #projects button{
     position: absolute;
-    right: 0;
-    bottom: 3em;
+    right: 1.2rem;
+    bottom: 1.2em;
     padding: 0.8rem 2.8rem;
     border-radius: .5rem;
     background-color: #007bff;
@@ -234,16 +287,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px 0;
-    height: 42vh;
+    height: fit-content;
     background-color: #f0f0f0;
 }
 
 #pr-img img{
-    height: 28vh;
+    width: 100%;
     object-fit: cover;
     object-position: center;
+    padding: 2px 0;
+    border-radius: inherit;
 }
-
 
 /* Skills Section */
 #skills {
@@ -310,7 +364,6 @@ body {
     color: #007bff;
     font-size: 35px;
     padding-right: 12px;
-    /* margin-bottom: 10px; */
 }
 
 .container a{
@@ -329,7 +382,7 @@ footer span{
 
 @media (width < 768px) {
     #navbar h1{
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         margin-left: 0;
         width: 90%;
         text-align: center;
@@ -337,7 +390,7 @@ footer span{
     #nav-menu{
         display: none;
     }
-    #nav-menu-2{
+    /* #nav-menu-2{
         list-style: none;
         height: calc(100% - 28px);
     }
@@ -346,9 +399,13 @@ footer span{
         height: 28px;
         border-radius: 30%;
         overflow: hidden;
-    }
+    } */
     
-    #nav-option-icon{
+    /* #navbar #left-icon{
+        margin-left: 1.5vh;
+    } */
+
+    /* #nav-option-icon{
         position: fixed;
         top: 10vh;
         width: 13%;
@@ -364,7 +421,7 @@ footer span{
     }
     #navbar h1{
         font-size: 1.8rem;
-    }
+    } */
     #navbar h1 #mr{
         font-size: 1.3rem;
     }
@@ -373,21 +430,30 @@ footer span{
         text-decoration: none;
         font-size: 20px;
     }
-    #nav-option-icon li:nth-last-child(1){
-        padding-top: 44vh;
-    }
     #right-aside{
-        width: 89%;
+        width: 100%;
     }
     #menu{
         display: block;
     }
     #hero-img{
-        height: 270px;
+        height: 250px;
     }
     #hero{
         align-items: center;
+        gap: 20px;
         justify-content: center;
+    }
+    #hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        line-height: 2rem;
+        color: #fff;
+    }
+    #hero h2 #title{
+        font-size: 2.6rem;
+        margin-bottom: 20px;
+        color: #007bff;
     }
     #btn-option{
         display: block;
@@ -424,6 +490,27 @@ footer span{
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         gap: 35px;
         margin-bottom: 60px;
+    }
+    #pr-img img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    #certification h3{
+        font-size: 1.1rem;
+        margin: 8px 0;
+        text-decoration: underline;
+    }
+    .certificate-gallery {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 35px;
+        margin-bottom: 60px;
+    }
+    #cr-img img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     #education .container{
         display: flex;
