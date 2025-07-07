@@ -1,3 +1,42 @@
+tailwind.config = {
+    darkMode: 'class' // 👈 This is the key!
+  }
+
+// Theme Toggle Logic
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  // Apply saved theme on load
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!localStorage.getItem("theme") &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+    themeIcon.classList.replace("ri-moon-line", "ri-sun-line");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.contains("dark");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Toggle icon
+    themeIcon.classList.toggle("ri-moon-line", !isDark);
+    themeIcon.classList.toggle("ri-sun-line", isDark);
+  });
+
+  // Sidebar Toggle Logic
+  const menuToggle = document.getElementById("menu-toggle");
+  const sidebar = document.querySelector("aside");
+
+  menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("-translate-x-full");
+  });
+
+
+
 // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +70,7 @@
   window.addEventListener("load", () => {
     const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
 
-    tl.from("#hero img", {
+    tl.from("#hero ", {
       y: -50,
       opacity: 0,
       scale: 0.8,
@@ -47,7 +86,7 @@
   });
 
   // Parallax effect for hero image
-  gsap.to("#hero img", {
+  gsap.to("#hero", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",

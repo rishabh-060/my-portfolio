@@ -8,11 +8,7 @@
   <title>rishabh-060</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <style>
-    body.dark {
-      @apply bg-gray-950 text-white;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-white text-gray-800 dark:bg-[#0f0f0f] dark:text-white">
@@ -22,17 +18,22 @@
       <a href="/" id="site-logo" class="text-2xl font-bold tracking-wide decoration-none cursor-pointer">
         <span class="text-green-500">Mr.</span> Rishabh Verma
       </a>
-      <!-- <div class="flex gap-4 items-center">
-        <button id="theme-toggle" class="text-xl px-2 py-1.5 rounded-full border border-white hover:bg-white hover:text-black transition">
-            <i id="theme-icon" class="ri-moon-line"></i>
+      <div class="flex gap-3 items-center">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="relative group text-xl p-2 rounded-full border border-zinc-300 dark:border-white bg-white/40 dark:bg-zinc-800/30 backdrop-blur-sm shadow-sm hover:shadow-md dark:hover:shadow-lg hover:bg-white/70 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <i id="theme-icon" class="ri-moon-line"></i>
         </button>
-        <button id="menu-toggle" class="lg:hidden text-2xl"><i class="ri-menu-line"></i></button>
-      </div> -->
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="lg:hidden text-3xl p-2 rounded-md hover:bg-zinc-200 dark:hover:bg-white/10 transition-all duration-300">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Sidebar Nav -->
-  <aside class="fixed top-12 left-0 w-64 h-full bg-white dark:bg-black shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40">
+  <aside class="fixed top-14 pt-5 left-0 w-64 h-full bg-white dark:bg-black shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40">
     <nav class="p-6 space-y-4">
       <ul id="sidebar" class="space-y-3 text-lg">
         <li><a href="/" class="block hover:text-green-500">🏠 Home</a></li>
@@ -50,18 +51,35 @@
 
   <main id="main-content" data-scroll-container class="lg:ml-64">
     <!-- Hero Section -->
-    <section id="hero" class="min-h-[90vh] flex items-center justify-center px-6 py-20">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 justify-center gap-10 items-center">
-        <img src="https://avatars.githubusercontent.com/u/145150811?s=400&u=3875db688042ccce322658112d3b51afcc12d570&v=4" alt="Rishabh Verma" class="w-72 h-72 md:w-60 md:h-60 object-cover rounded-full border-4 border-green-500 shadow-xl mx-auto" />
+    <section id="hero" class="min-h-[80vh] md:min-h-[90vh] flex items-center justify-center px-6 py-20 relative overflow-hidden">
+      <!-- Animated Gradient Background Blobs -->
+      <div class="absolute top-0 left-0 bottom-0 w-full h-full z-0 overflow-hidden">
+        <!-- Blob 1 -->
+        <div class="absolute top-1/2 left-1/2 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-zinc-900 via-green-400 to-green-500 opacity-30 blur-3xl animate-spin-slow transform -translate-x-1/2 -translate-y-1/2"></div>
+
+        <!-- Blob 2 -->
+        <div class="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-green-500 via-green-300 to-zinc-800 opacity-20 blur-2xl animate-spin-slower"></div>
+
+        <!-- Blob 3 -->
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-zinc-800 via-green-600 to-green-400 opacity-10 blur-[100px] animate-spin-slowest"></div>
+      </div>
+
+      <!-- Foreground Content -->
+      <div class="relative z-10 max-w-5xl mx-auto grid grid-cols-1 justify-center gap-10 items-center">
+        <div class="max-w-6xl md:max-w-4xl mx-auto rounded-full overflow-hidden drop-shadow-md shadow-green-500">
+          <img src="https://avatars.githubusercontent.com/u/145150811?s=400&u=3875db688042ccce322658112d3b51afcc12d570&v=4"
+            alt="Rishabh Verma"
+            class="w-72 h-72 md:w-60 p-1 md:h-60 object-cover rounded-full shadow-xl mx-auto" />
+        </div>
         <div class="space-y-4 text-center">
           <h2 class="text-xl font-bold">I'm a <span class="text-green-500 text-3xl">Software Developer Intern</span></h2>
-          <p class="text-lg"> I'm a Full-Stack Developer with expertise in ReactJS, NodeJS, ExpressJS, SQL and modern web technologies.</p>
+          <p class="text-lg">I'm a Full-Stack Developer with expertise in ReactJS, NodeJS, ExpressJS, SQL and modern web technologies.</p>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="px-6 py-32 bg-gray-100 dark:bg-zinc-900 h-fit">
+    <section id="about" class="px-6 pt-32 md:pt-20 pb-32 bg-gray-100 dark:bg-zinc-900 h-fit">
       <div class="max-w-4xl mx-auto text-center space-y-4">
         <h2 class="text-3xl font-bold">About Me</h2>
         <p>I’m currently working as a Software Developer Intern at Trayistats AI Solutions, where I contribute to building efficient and impactful software solutions. I recently completed my Master’s of Computer Applications (MCA) from SRM University, Barabanki, and hold a B.Sc. in Computer Applications from CSJM University, Kanpur. With a strong academic foundation in Computer Science and hands-on experience in web development, I specialize in building modern, responsive, and performance-optimized web applications. My core strengths lie in full-stack development, clean code architecture, and the ability to solve complex problems with precision and creativity. I’m deeply passionate about leveraging technology to build solutions that are not only functional but also deliver seamless and impactful user experiences. Whether it's creating intuitive UIs or designing scalable backend systems, I approach every project with a focus on quality, efficiency, and continuous improvement. I’m always eager to embrace new technologies, collaborate with innovative minds, and contribute to projects that drive real-world value. My long-term goal is to become a well-rounded software engineer who builds solutions that make a meaningful difference.</p>
@@ -69,9 +87,29 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="max-w-6xl mx-auto py-32 px-5 md:px-0" data-scroll>
+    <section id="skills" class="max-w-6xl mx-auto pt-32 md:pt-20 pb-32 px-5 md:px-0" data-scroll>
       <h2 class="text-3xl font-semibold mb-8 text-center">Skills</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
+          <h3 class="font-semibold mb-2">Frameworks & Technology</h3>
+          <ul class="list-disc ml-5">
+            <li>React</li>
+            <li>Tailwind CSS</li>
+            <li>Node.js & Express</li>
+            <li>MongoDB / SQL</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
+          <h3 class="font-semibold mb-2">Web Development</h3>
+          <ul class="list-disc ml-5">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Tailwind CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+          </ul>
+        </div>
         <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
           <h3 class="font-semibold mb-2">Programming Languages</h3>
           <ul class="list-disc ml-5">
@@ -82,25 +120,10 @@
           </ul>
         </div>
         <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
-          <h3 class="font-semibold mb-2">Frameworks</h3>
-          <ul class="list-disc ml-5">
-            <li>React</li>
-            <li>Node.js & Express</li>
-            <li>MongoDB / SQL</li>
-          </ul>
-        </div>
-        <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
-          <h3 class="font-semibold mb-2">Web Development</h3>
-          <ul class="list-disc ml-5">
-            <li>HTML5</li>
-            <li>CSS3 / Tailwind</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
-        <div id="skill-item" class="bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl hover:scale-105 transition-all">
           <h3 class="font-semibold mb-2">Tools</h3>
           <ul class="list-disc ml-5">
             <li>Git & GitHub</li>
+            <li>Postman</li>
             <li>Redux</li>
             <li>Appwrite</li>
           </ul>
@@ -109,7 +132,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="px-6 py-32 bg-gray-100 dark:bg-zinc-900 h-fit" data-scroll>
+    <section id="experience" class="px-6 pt-32 md:pt-20 pb-32 bg-gray-100 dark:bg-zinc-900 h-fit" data-scroll>
       <h2 class="text-3xl font-semibold mb-6 text-center">Experience</h2>
       <div class="space-y-6 max-w-3xl mx-auto">
         <div id="experience-item" class="bg-white dark:bg-gray-800 shadow p-5 rounded-lg">
@@ -124,38 +147,50 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="max-w-6xl mx-auto py-32 px-7 md:px-0" data-scroll>
+    <section id="projects" class="max-w-6xl mx-auto pt-32 md:pt-20 pb-32 px-7 md:px-0" data-scroll>
       <h2 class="text-3xl font-semibold mb-12 text-center">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
           <h3 class="text-xl font-semibold mb-2">Blo-Docs</h3>
           <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">Modern blogging platform with React, Tailwind & Appwrite.</p>
-          <img src="./media/Blo_docs.png" class="h-60 my-1.5 rounded overflow-hidden mx-auto"/>
+          <img src="./media/Blo_docs.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
           <a href="https://blo-docs.netlify.app/" class="text-blue-500 hover:underline">Live Demo</a>
         </div>
         <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
           <h3 class="text-xl font-semibold mb-2">Scan My Meal</h3>
-          <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">Food ordering app (MERN stack).</p>
-          <img src="./media/Scan_My_Meal.png" class="h-60 my-1.5 rounded overflow-hidden mx-auto"/>
+          <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">Food ordering app using ReactJS, Tailwind CSS, NodeJS, ExpressJS, MongoDB</p>
+          <img src="./media/Scan_My_Meal.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
           <a href="https://scanmymeal.netlify.app/" class="text-blue-500 hover:underline">Live Demo</a>
         </div>
         <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
           <h3 class="text-xl font-semibold mb-2">Receipe Center</h3>
           <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">Modern receipe sharing app using NodeJs, ExpressJs, MongoDB, EJS & Tailwind CSS</p>
-          <img src="./media/receipe-center.png" class="h-60 my-1.5 rounded overflow-hidden mx-auto"/>
-          <a href="" class="text-blue-500 hover:underline">Github</a>
+          <img src="./media/receipe-center.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
+          <a href="https://github.com/rishabh-060/Receipe_Center" class="text-blue-500 hover:underline">Github</a>
+        </div>
+        <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
+          <h3 class="text-xl font-semibold mb-2">Currency Converter Webapp</h3>
+          <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">API based currency converter webapp using ReactJS, Tailwind CSS, Currency-Converter-API</p>
+          <img src="./media/currency_converter.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
+          <!-- <a href="" class="text-blue-500 hover:underline">Github</a> -->
+        </div>
+        <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
+          <h3 class="text-xl font-semibold mb-2">Weather Webapp</h3>
+          <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">API based weather data fetching app using HTML5, CSS3, JavaScript & get-weather-api</p>
+          <img src="./media/check-weather.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
+          <a href="https://github.com/rishabh-060/Check-Weather-using-JavaScript" class="text-blue-500 hover:underline">Github</a>
         </div>
         <div id="project-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
           <h3 class="text-xl font-semibold mb-2">Employee Management System</h3>
           <p class="text-sm mb-2 text-gray-600 dark:text-gray-300">Desktop app for managing employees using Python, Tkinter & SQL</p>
-          <img src="./media/emp_sys.png" class="h-60 my-1.5 rounded overflow-hidden mx-auto"/>
-          <a href="" class="text-blue-500 hover:underline">Github</a>
+          <img src="./media/emp_sys.png" class="h-40 my-1.5 rounded overflow-hidden mx-auto"/>
+          <a href="https://github.com/rishabh-060/Employee_Management_System" class="text-blue-500 hover:underline">Github</a>
         </div>
       </div>
     </section>
 
     <!-- Certificate Section -->
-    <section id="certification" class="px-6 py-32 bg-gray-100 dark:bg-zinc-900 h-fit" data-scroll>
+    <section id="certification" class="px-6 pt-32 md:pt-20 pb-32 bg-gray-100 dark:bg-zinc-900 h-fit" data-scroll>
       <h2 class="text-3xl font-semibold mb-12 text-center">Certificates</h2>
       <div class="grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div id="certificate-item" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition-all">
@@ -167,7 +202,7 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="max-w-6xl mx-auto py-32 px-7 md:px-0" data-scroll>
+    <section id="education" class="max-w-6xl mx-auto pt-32 md:pt-20 pb-32 px-7 md:px-0" data-scroll>
       <h2 class="text-3xl font-semibold mb-6 text-center">Education</h2>
       <div class="space-y-6 max-w-3xl mx-auto">
         <div id="education-item" class="bg-white dark:bg-gray-800 shadow p-5 rounded-lg">
@@ -199,7 +234,6 @@
         &copy; 2024 Rishabh Verma. All rights reserved.
     </footer>
   </main>
-
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
