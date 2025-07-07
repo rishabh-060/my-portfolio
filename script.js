@@ -13,3 +13,26 @@ gsap.utils.toArray("#project-item, #education-item, #certificate-item, #skill-it
     ease: "power3.out"
   });
 });
+
+window.addEventListener("load", () => {
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+
+    // Animate image
+    tl.from("#hero img", {
+      y: -50,
+      opacity: 0,
+      scale: 0.8,
+    })
+
+    // Animate heading
+    .from("#hero h2", {
+      y: 30,
+      opacity: 0,
+    }, "-=0.5")
+
+    // Animate paragraph
+    .from("#hero p", {
+      y: 30,
+      opacity: 0,
+    }, "-=0.5");
+  });
