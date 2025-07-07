@@ -36,3 +36,31 @@ window.addEventListener("load", () => {
       opacity: 0,
     }, "-=0.5");
   });
+
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from("#about h2", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%", // when top of section hits 80% of viewport
+      toggleActions: "play none none none",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from("#about p", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    y: 30,
+    opacity: 0,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "power2.out",
+  });
