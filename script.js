@@ -70,7 +70,7 @@ tailwind.config = {
   window.addEventListener("load", () => {
     const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
 
-    tl.from("#hero ", {
+    tl.from("#hero img", {
       y: -50,
       opacity: 0,
       scale: 0.8,
