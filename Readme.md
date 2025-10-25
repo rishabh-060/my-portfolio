@@ -48,17 +48,8 @@ Welcome to my **developer portfolio website**! This fully responsive site showca
 
 ## 📥 Resume
 
-- 📄 [Download Resume](./media/RISHABH-VERMA.pdf)
+- 📄 [Download Resume](./media/RISHABH-VERMA-CV.pdf)
 
 ---
-
-## 🔧 Installation & Usage
-
-- Clone the repo:
-
-```bash
-git clone https://github.com/rishabh-060/my-portfolio.git
-cd my-portfolio
-```
 
 ## 🙏 Thanks For visit @rishabh-060 🙌🫡.
