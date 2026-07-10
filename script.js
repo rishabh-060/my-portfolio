@@ -1,152 +1,139 @@
-tailwind.config = {
-    darkMode: 'class' // 👈 This is the key!
-  }
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.querySelector("aside");
+const navLinks = document.querySelectorAll(".nav-link");
+const contactForm = document.getElementById("contact-form");
+const contactSubmit = document.getElementById("contact-submit");
+const formStatus = document.getElementById("form-status");
 
-// Theme Toggle Logic
-  const themeToggle = document.getElementById("theme-toggle");
-  const themeIcon = document.getElementById("theme-icon");
+const setThemeIcon = (isDark) => {
+  if (!themeIcon) return;
+  themeIcon.classList.toggle("ri-moon-line", !isDark);
+  themeIcon.classList.toggle("ri-sun-line", isDark);
+};
 
-  // Apply saved theme on load
-  if (
-    localStorage.getItem("theme") === "dark" ||
-    (!localStorage.getItem("theme") &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-    themeIcon.classList.replace("ri-moon-line", "ri-sun-line");
-  }
+const preferredDark =
+  localStorage.getItem("theme") === "dark" ||
+  (!localStorage.getItem("theme") &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-  themeToggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
-    const isDark = document.documentElement.classList.contains("dark");
+document.documentElement.classList.toggle("dark", preferredDark);
+setThemeIcon(preferredDark);
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+themeToggle?.addEventListener("click", () => {
+  const isDark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  setThemeIcon(isDark);
+});
 
-    // Toggle icon
-    themeIcon.classList.toggle("ri-moon-line", !isDark);
-    themeIcon.classList.toggle("ri-sun-line", isDark);
+menuToggle?.addEventListener("click", () => {
+  const isOpen = !sidebar.classList.contains("-translate-x-full");
+  sidebar.classList.toggle("-translate-x-full", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(!isOpen));
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 1024) {
+      sidebar.classList.add("-translate-x-full");
+      menuToggle?.setAttribute("aria-expanded", "false");
+    }
   });
+});
 
-  // Sidebar Toggle Logic
-  const menuToggle = document.getElementById("menu-toggle");
-  const sidebar = document.querySelector("aside");
+const sections = [...document.querySelectorAll("main section[id]")];
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${entry.target.id}`
+        );
+      });
+    });
+  },
+  { rootMargin: "-45% 0px -45% 0px", threshold: 0.01 }
+);
 
-  menuToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("-translate-x-full");
-  });
+sections.forEach((section) => observer.observe(section));
 
-
-
-// Register ScrollTrigger plugin
+if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Responsive animations using matchMedia
   const mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
-    // Sidebar and site logo animation (desktop only)
-    gsap.fromTo("#sidebar, #site-logo",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out"
-      }
+    gsap.fromTo(
+      "#sidebar, #site-logo",
+      { x: "-18%", opacity: 0 },
+      { x: "0%", opacity: 1, duration: 0.8, ease: "power3.out" }
     );
-
-    // Animate each sidebar nav item with a stagger
-    gsap.from("#sidebar nav li", {
-      x: -30,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      delay: 0.3,
-      ease: "power2.out"
-    });
   });
 
-  // Hero section timeline animation (image, heading, paragraph)
   window.addEventListener("load", () => {
-    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+    const timeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
+    timeline
+      .from("#hero .space-y-7 > *", { y: 24, opacity: 0, stagger: 0.12 })
+      .from("#hero img", { y: 24, opacity: 0, scale: 0.96 }, "-=0.35");
+  });
 
-    tl.from("#hero img", {
-      y: -50,
+  gsap.utils.toArray(".stat-card, .skill-card, .timeline-card, .project-card, .info-card").forEach((card) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 88%",
+      },
+      y: 28,
       opacity: 0,
-      scale: 0.8,
-    })
-    .from("#hero h2", {
-      y: 30,
-      opacity: 0,
-    }, "-=0.5")
-    .from("#hero p", {
-      y: 30,
-      opacity: 0,
-    }, "-=0.5");
-  });
-
-  // Parallax effect for hero image
-  gsap.to("#hero", {
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top top",
-      scrub: true
-    },
-    y: 50,
-    scale: 1.05,
-  });
-
-  // About section animation
-  gsap.from("#about h2", {
-    scrollTrigger: {
-      trigger: "#about",
-      start: "top 80%",
-      toggleActions: "play none none none",
-    },
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-  });
-
-  gsap.from("#about p", {
-    scrollTrigger: {
-      trigger: "#about",
-      start: "top 75%",
-      toggleActions: "play none none none",
-    },
-    y: 30,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.3,
-    ease: "power2.out",
-  });
-
-  // Card reveal animation using ScrollTrigger.batch for performance
-  ScrollTrigger.batch("#project-item, #education-item, #certificate-item, #skill-item, #experience-item", {
-    start: "top 90%",
-    onEnter: batch => gsap.to(batch, {
-      y: 0,
-      opacity: 1,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: "power3.out"
-    }),
-    onLeaveBack: batch => gsap.to(batch, {
-      y: 80,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.5,
-      ease: "power3.in"
-    }),
-  });
-
-  // Hover animation for interactive card effect
-  document.querySelectorAll("#project-item, #education-item, #certificate-item, #skill-item, #experience-item").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, { scale: 1.03, duration: 0.3, ease: "power1.out" });
-    });
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, { scale: 1, duration: 0.3, ease: "power1.inOut" });
+      duration: 0.65,
+      ease: "power2.out",
     });
   });
+}
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (contactSubmit.disabled) return;
+
+  const formData = new FormData(contactForm);
+  const name = String(formData.get("name") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const subject = String(formData.get("subject") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!name || !email || !subject || !message) {
+    formStatus.textContent = "Please fill in all required fields.";
+    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-red-600";
+    return;
+  }
+
+  if (!emailPattern.test(email)) {
+    formStatus.textContent = "Please enter a valid email address.";
+    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-red-600";
+    return;
+  }
+
+  contactSubmit.disabled = true;
+  contactSubmit.innerHTML = '<i class="ri-loader-4-line animate-spin" aria-hidden="true"></i>Preparing Email';
+  formStatus.textContent = "Opening your email app...";
+  formStatus.className = "mt-4 min-h-6 text-sm font-medium text-blue-600";
+
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\n${message}`
+  );
+  const mailto = `mailto:verma.rishabh924@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+  window.location.href = mailto;
+
+  window.setTimeout(() => {
+    formStatus.textContent = "Message prepared. If your email app did not open, email me directly at verma.rishabh924@gmail.com.";
+    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-emerald-600";
+    contactSubmit.disabled = false;
+    contactSubmit.innerHTML = '<i class="ri-send-plane-line" aria-hidden="true"></i>Open Email App';
+  }, 1200);
+});

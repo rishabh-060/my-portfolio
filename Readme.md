@@ -1,55 +1,34 @@
-# 🌐 Rishabh Verma — Personal Portfolio Website
+# Rishabh Verma - Developer Portfolio
 
-Welcome to my **developer portfolio website**! This fully responsive site showcases my work, experience, education, and technical skills as a **Full-Stack Developer** (MERN). Built with **HTML**, **Tailwind CSS**, and enhanced using **GSAP** for animations, the site supports **dark/light mode**, smooth scrolling, and mobile responsiveness.
+Professional portfolio website for Rishabh Verma, a Software Developer / Full-Stack Developer focused on MERN stack and enterprise web application development.
 
-## 📸 Preview
+## Live Site
 
-- [Live Demo]('https://rishabh-060.netlify.app/')
+[https://rishabh-060.netlify.app/](https://rishabh-060.netlify.app/)
 
-- ![Portfolio Preview](./media/preview.png)
+## Overview
 
----
+This portfolio is a static site built with HTML, Tailwind CSS via CDN, Remix Icons, and GSAP animations. It includes a dark/light mode toggle, responsive sidebar navigation, recruiter-friendly content sections, featured projects, experience, education, certifications, and contact details.
 
-## 🚀 Features
+## Sections
 
-- 🎨 Clean, modern UI built with **Tailwind CSS**
-- 🌗 Dark / Light mode with animated toggle
-- 📱 Mobile-friendly sidebar navigation
-- 🧲 Smooth scrolling with **GSAP + ScrollTrigger**
-- 📌 Scrollspy highlighting for sections
-- 🗂 Dynamic Projects & Skills cards with animations
-- ⬇️ Downloadable Resume (PDF)
-- ☝️ Floating scroll-to-top button (optional)
-- 🎓 Sections for Education, Certifications, Experience, and Social Links
+- Hero and professional summary
+- About and experience highlights
+- Categorized technical skills
+- Professional experience
+- Featured projects
+- Education
+- Certifications
+- Contact form and social links
+- Resume download
 
----
+## Resume
 
-## 🧰 Tech Stack
+[Download Resume](./media/Rishabh-Verma-Software-Developer-Resume.pdf)
 
-| Frontend                         | Scroll                       | Icons                        |
-|----------------------------------|------------------------------|------------------------------|
-| HTML5                            | ScrollTrigger                | Remix Icons                  |
-| Tailwind CSS                     | Locomotive (optional)        | Responsive Design            |
+## Main Assets
 
----
-
-## 🧑‍💻 Sections Overview
-
-- **Hero Section** – Personal branding & introduction
-- **About Me** – Brief academic and career summary
-- **Skills** – Categorized list of tech stacks
-- **Experience** – Professional work experience
-- **Projects** – Showcased major web apps (ScanMyMeal, Blo-Docs, etc.)
-- **Certifications** – Relevant tech certifications
-- **Education** – Academic qualifications
-- **Social Profiles** – Linked social handles
-
----
-
-## 📥 Resume
-
-- 📄 [Download Resume](./media/RISHABH-VERMA-CV.pdf)
-
----
-
-## 🙏 Thanks For visit @rishabh-060 🙌🫡.
+- `index.html` - Portfolio content and page metadata
+- `style.css` - Scoped UI styling on top of Tailwind utility classes
+- `script.js` - Theme toggle, mobile navigation, scroll state, animations, and contact form behavior
+- `media/` - Project screenshots, logo, preview image, certificates, and resume PDF
