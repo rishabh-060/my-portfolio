@@ -4,18 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Rishabh Verma, a Software Developer with experience in React.js, Node.js, Express.js, MongoDB, Microsoft SQL Server, REST APIs, and scalable full-stack web application development." />
-  <meta name="keywords" content="Rishabh Verma, Software Developer, MERN Stack Developer, Full Stack Developer, React Developer, Node.js Developer, JavaScript Developer, Express.js, MongoDB, MSSQL, Noida Software Developer, Immediate Joiner" />
+  <meta name="description" content="Full Stack Developer specialising in React.js, Node.js, Express.js, REST APIs, MSSQL, and MongoDB. Explore Rishabh Verma's experience, skills, and projects." />
+  <meta name="keywords" content="Rishabh Verma, Full Stack Developer, React.js Developer, Node.js Developer, MERN Stack Developer, Frontend Developer, Backend Developer, JavaScript, TypeScript, Express.js, MongoDB, MSSQL, REST APIs, Immediate Joiner" />
   <meta name="author" content="Rishabh Verma" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rishabh Verma | Software Developer & MERN Stack Developer" />
-  <meta property="og:description" content="Full-stack portfolio of Rishabh Verma, focused on React.js, Node.js, Express.js, MongoDB, Microsoft SQL Server, REST APIs, and production web applications." />
+  <meta name="theme-color" content="#020617" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Rishabh Verma | Full Stack Developer" />
+  <meta property="og:description" content="React.js and Node.js Full Stack Developer with production experience in REST APIs, debugging, MSSQL, MongoDB, and maintainable web applications." />
   <meta property="og:url" content="https://rishabh-060.netlify.app/" />
   <meta property="og:image" content="media/preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rishabh Verma | Full Stack Developer" />
+  <meta name="twitter:description" content="Full Stack Developer specialising in React.js, Node.js, Express.js, REST APIs, MSSQL, and MongoDB." />
+  <meta name="twitter:image" content="media/preview.png" />
   <link rel="canonical" href="https://rishabh-060.netlify.app/" />
   <link rel="shortcut icon" href="./media/logo-rishabh-060.png" type="image/x-icon" />
-  <title>Rishabh Verma | Software Developer & MERN Stack Developer</title>
+  <title>Rishabh Verma | Full Stack Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,241 +28,351 @@
   </script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rishabh Verma",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://rishabh-060.netlify.app/",
+      "email": "mailto:verma.rishabh924@gmail.com",
+      "sameAs": [
+        "https://github.com/rishabh-060",
+        "https://www.linkedin.com/in/rishabh-verma-277530223"
+      ],
+      "knowsAbout": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Microsoft SQL Server",
+        "MongoDB",
+        "JavaScript",
+        "TypeScript"
+      ]
+    }
+  </script>
 </head>
 
-<body class="relative overflow-x-hidden bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100">
-  <header class="sticky top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-    <div class="container mx-auto flex items-center justify-between px-4 py-4">
-      <a href="#hero" id="site-logo" class="text-xl font-bold tracking-wide text-slate-950 dark:text-white" aria-label="Rishabh Verma home">
-        Rishabh <span class="text-blue-600 dark:text-blue-400">Verma</span>
+<body class="relative overflow-x-hidden bg-slate-950 text-slate-100">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header class="sticky top-0 left-0 right-0 z-50 border-b border-slate-800 bg-slate-950/90 shadow-sm backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+      <a href="#hero" id="site-logo" class="text-xl font-bold tracking-wide text-white focus-ring" aria-label="Rishabh Verma home">
+        Rishabh <span class="text-blue-400">Verma</span>
       </a>
       <div class="flex items-center gap-3">
-        <a href="./media/Rishabh-Verma-Software-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Software-Developer-Resume.pdf" class="hidden rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 sm:inline-flex">
+        <a href="./media/Rishabh-Verma-Full-Stack-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Full-Stack-Developer-Resume.pdf" class="hidden rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 focus-ring sm:inline-flex">
           <i class="ri-download-2-line mr-2" aria-hidden="true"></i>Resume
         </a>
-        <button id="theme-toggle" class="rounded-full border border-slate-300 bg-white p-2 text-xl text-slate-700 shadow-sm transition hover:border-blue-500 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Toggle dark mode">
-          <i id="theme-icon" class="ri-moon-line" aria-hidden="true"></i>
+        <button id="theme-toggle" class="rounded-full border border-slate-700 bg-slate-900 p-2 text-xl text-slate-100 shadow-sm transition hover:border-blue-500 hover:text-blue-300 focus-ring" aria-label="Toggle color theme">
+          <i id="theme-icon" class="ri-sun-line" aria-hidden="true"></i>
         </button>
-        <button id="menu-toggle" class="rounded-md p-2 text-3xl transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:hover:bg-slate-800 lg:hidden" aria-label="Open navigation menu" aria-expanded="false">
+        <button id="menu-toggle" class="rounded-md p-2 text-3xl transition hover:bg-slate-800 focus-ring lg:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
           <i class="ri-menu-line" aria-hidden="true"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <aside class="fixed left-0 top-16 z-40 h-full w-64 -translate-x-full border-r border-slate-200 bg-white shadow-lg transition-transform duration-300 dark:border-slate-800 dark:bg-slate-950 lg:translate-x-0">
-    <nav class="p-6" aria-label="Primary navigation">
+  <aside class="fixed left-0 top-16 z-40 h-[calc(100vh-4rem)] w-64 -translate-x-full border-r border-slate-800 bg-slate-950 shadow-xl transition-transform duration-300 lg:translate-x-0">
+    <nav class="h-full overflow-y-auto p-6" aria-label="Primary navigation">
       <ul id="sidebar" class="space-y-2 text-base font-medium">
         <li><a href="#hero" class="nav-link"><i class="ri-home-5-line" aria-hidden="true"></i>Home</a></li>
         <li><a href="#about" class="nav-link"><i class="ri-user-line" aria-hidden="true"></i>About</a></li>
-        <li><a href="#skills" class="nav-link"><i class="ri-tools-line" aria-hidden="true"></i>Skills</a></li>
         <li><a href="#experience" class="nav-link"><i class="ri-briefcase-4-line" aria-hidden="true"></i>Experience</a></li>
+        <li><a href="#skills" class="nav-link"><i class="ri-tools-line" aria-hidden="true"></i>Skills</a></li>
         <li><a href="#projects" class="nav-link"><i class="ri-folder-3-line" aria-hidden="true"></i>Projects</a></li>
         <li><a href="#education" class="nav-link"><i class="ri-graduation-cap-line" aria-hidden="true"></i>Education</a></li>
-        <li><a href="#certifications" class="nav-link"><i class="ri-award-line" aria-hidden="true"></i>Certifications</a></li>
         <li><a href="#contact" class="nav-link"><i class="ri-contacts-line" aria-hidden="true"></i>Contact</a></li>
-        <li><a href="./media/Rishabh-Verma-Software-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Software-Developer-Resume.pdf" class="nav-link"><i class="ri-download-2-line" aria-hidden="true"></i>Download Resume</a></li>
+        <li><a href="./media/Rishabh-Verma-Full-Stack-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Full-Stack-Developer-Resume.pdf" class="nav-link"><i class="ri-download-2-line" aria-hidden="true"></i>Download Resume</a></li>
       </ul>
     </nav>
   </aside>
 
   <main id="main-content" class="lg:ml-64">
-    <section id="hero" class="relative min-h-[90vh] overflow-hidden bg-white px-6 py-20 dark:bg-slate-950">
+    <section id="hero" class="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.2),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_52%,#111827_100%)] px-6 py-20 md:py-28">
       <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
         <div class="space-y-7">
+          <!-- <div class="flex flex-wrap gap-3">
+            <span class="status-pill status-pill--available"><i class="ri-flashlight-line" aria-hidden="true"></i>Immediate Joiner</span>
+            <span class="status-pill"><i class="ri-map-pin-line" aria-hidden="true"></i>India</span>
+          </div> -->
           <div class="space-y-4">
-            <p class="text-base font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Software Developer</p>
-            <h1 class="max-w-4xl text-4xl font-bold leading-tight text-slate-950 dark:text-white md:text-6xl">
-              Building Scalable, Reliable and High-Performance Web Applications
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Node.js + React Full Stack Developer</p>
+            <h1 class="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
+              Rishabh Verma
             </h1>
-            <p class="max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              I am Rishabh Verma, a Software Developer with 1+ year of professional experience building scalable enterprise and full-stack web applications using React.js, Node.js, Express.js, MongoDB, and Microsoft SQL Server.
+            <h2 class="max-w-4xl text-2xl font-semibold leading-tight text-slate-200 md:text-4xl">
+              Full Stack Developer specialising in React.js and Node.js
+            </h2>
+            <p class="max-w-3xl text-lg leading-8 text-slate-300">
+              Full Stack Developer specialising in React.js and Node.js, with hands-on experience building, debugging, and maintaining production web applications.
             </p>
-            <p class="text-base font-medium text-slate-500 dark:text-slate-400">
-              Full-Stack Developer | MERN Stack Developer | React.js Developer | Node.js Developer
+            <p class="max-w-3xl text-base leading-7 text-slate-400">
+              I build responsive frontend experiences, scalable REST APIs, and database-driven applications using modern JavaScript technologies.
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
             <a href="#projects" class="btn-primary"><i class="ri-folder-3-line" aria-hidden="true"></i>View Projects</a>
-            <a href="./media/Rishabh-Verma-Software-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Software-Developer-Resume.pdf" class="btn-secondary"><i class="ri-download-2-line" aria-hidden="true"></i>Download Resume</a>
-            <a href="#contact" class="btn-secondary"><i class="ri-mail-line" aria-hidden="true"></i>Contact Me</a>
-            <a href="https://github.com/rishabh-060" target="_blank" rel="noopener" class="btn-ghost" aria-label="Open Rishabh Verma GitHub profile"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="./media/Rishabh-Verma-Full-Stack-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Full-Stack-Developer-Resume.pdf" class="btn-secondary"><i class="ri-download-2-line" aria-hidden="true"></i>Download Resume</a>
+            <a href="https://www.linkedin.com/in/rishabh-verma-277530223" target="_blank" rel="noopener" class="btn-ghost"><i class="ri-linkedin-box-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/rishabh-060" target="_blank" rel="noopener" class="btn-ghost"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="mailto:verma.rishabh924@gmail.com" class="btn-ghost"><i class="ri-mail-line" aria-hidden="true"></i>Email</a>
           </div>
         </div>
         <div class="mx-auto w-full max-w-sm">
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl dark:border-slate-800 dark:bg-slate-900">
-            <img src="https://avatars.githubusercontent.com/u/145150811?s=400&u=3875db688042ccce322658112d3b51afcc12d570&v=4" alt="Rishabh Verma profile photo" class="aspect-square w-full rounded-xl object-cover" />
-            <div class="mt-4 space-y-2">
-              <h2 class="text-xl font-bold">Rishabh Verma</h2>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Noida, Uttar Pradesh, India</p>
-              <!-- <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">Open to Software Developer roles in the 7-10 LPA range</p> -->
+          <div class="profile-card">
+            <img src="https://avatars.githubusercontent.com/u/145150811?s=400&u=3875db688042ccce322658112d3b51afcc12d570&v=4" alt="Rishabh Verma profile photo" class="aspect-square w-full rounded-xl object-cover" loading="eager" />
+            <div class="mt-5 space-y-3">
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Recruiter Snapshot</p>
+              <ul class="snapshot-list">
+                <li><span>Experience</span><strong>1+ year production work</strong></li>
+                <li><span>Focus</span><strong>React.js, Node.js, REST APIs</strong></li>
+                <li><span>Strength</span><strong>Debugging, databases, clean code</strong></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section-shell bg-slate-100 dark:bg-slate-900">
+    <section id="about" class="section-shell bg-slate-900">
       <div class="mx-auto max-w-6xl">
         <div class="section-heading">
           <p>About</p>
-          <h2>Full-stack production experience with a business-first mindset</h2>
+          <h2>Production-minded full stack developer</h2>
         </div>
         <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div class="space-y-5 text-base leading-8 text-slate-700 dark:text-slate-300">
-            <p>I am a Software Developer with 1+ year of professional experience building and maintaining enterprise-grade web applications using React.js, Node.js, Express.js, MongoDB, and Microsoft SQL Server.</p>
-            <p>At Trayistats AI Technologies, I work on production-level market research platforms where I develop RESTful APIs, implement new business features, troubleshoot production issues, optimize database queries, and contribute to performance-focused application development.</p>
-            <p>I have hands-on experience across frontend and backend development, authentication and authorization, SQL optimization, asynchronous processing, API integration, deployment, debugging, and collaborative Agile development.</p>
-            <p>I enjoy solving real-world engineering problems, writing clean and maintainable code, and building responsive applications that deliver measurable business value.</p>
+          <div class="content-panel space-y-5 text-base leading-8">
+            <p>
+              I am a Full Stack Developer with more than 1 year of relevant software development experience across React.js, Node.js, Express.js, Microsoft SQL Server, and MongoDB.
+            </p>
+            <p>
+              My work has focused on enterprise market-research web applications where reliability, debugging, REST API integration, participant flows, admin tools, survey workflows, reporting, and database-backed features matter every day.
+            </p>
+            <p>
+              I enjoy root-cause analysis, writing maintainable code, improving SQL queries and reporting workflows, and building features that fit real production requirements.
+            </p>
           </div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <div class="stat-card"><strong>1+ Year</strong><span>Professional Experience</span></div>
+            <div class="stat-card"><strong>1+ Year</strong><span>Relevant Software Development Experience</span></div>
             <div class="stat-card"><strong>100+</strong><span>Production Issues Resolved</span></div>
-            <div class="stat-card"><strong>10+</strong><span>Production Features Delivered</span></div>
-            <div class="stat-card"><strong>35%</strong><span>Improvement in Report Performance</span></div>
-            <div class="stat-card"><strong>Full-Stack</strong><span>Production Experience</span></div>
+            <div class="stat-card"><strong>React.js + Node.js</strong><span>Primary Full Stack Focus</span></div>
+            <div class="stat-card"><strong>MSSQL + MongoDB</strong><span>Database-Driven Application Work</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="summary" class="section-shell bg-white dark:bg-slate-950">
-      <div class="mx-auto max-w-5xl rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Professional Summary</p>
-        <p class="text-lg leading-8 text-slate-700 dark:text-slate-300">
-          Software Developer with 1+ year of experience building scalable enterprise market research platforms using React.js, Node.js, Express.js, MongoDB, and Microsoft SQL Server. Proficient in developing RESTful APIs, implementing secure authentication and authorization, optimizing database performance, debugging production issues, and delivering scalable features in Agile environments. Focused on clean, maintainable, and high-performance application development.
-        </p>
-      </div>
-    </section>
-
-    <section id="skills" class="section-shell bg-slate-100 dark:bg-slate-900">
-      <div class="mx-auto max-w-6xl">
-        <div class="section-heading text-center">
-          <p>Skills</p>
-          <h2>Technologies grouped for recruiter-friendly scanning</h2>
-        </div>
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          <article class="skill-card"><h3>Languages</h3><div><span>JavaScript (ES6+)</span><span>SQL</span><span>TypeScript - Familiar</span></div></article>
-          <article class="skill-card"><h3>Frontend</h3><div><span>React.js</span><span>Redux Toolkit</span><span>React Router</span><span>Next.js</span><span>Tailwind CSS</span><span>HTML5</span><span>CSS3</span><span>Responsive Web Design</span><span>Axios</span></div></article>
-          <article class="skill-card"><h3>Backend</h3><div><span>Node.js</span><span>Express.js</span><span>RESTful APIs</span><span>JWT Authentication</span><span>Role-Based Authorization</span><span>Middleware</span><span>API Integration</span><span>Error Handling</span><span>Asynchronous Processing</span></div></article>
-          <article class="skill-card"><h3>Databases</h3><div><span>Microsoft SQL Server</span><span>MongoDB</span><span>Mongoose</span><span>SQL Query Optimization</span><span>Stored Procedures</span><span>Joins</span><span>Indexing</span><span>Transactions</span></div></article>
-          <article class="skill-card"><h3>Tools and Platforms</h3><div><span>Git</span><span>GitHub</span><span>Postman</span><span>Netlify</span><span>Render</span><span>Cloudinary</span><span>Stripe</span><span>Nodemailer</span><span>RabbitMQ</span></div></article>
-          <article class="skill-card"><h3>Learning / Familiar</h3><div><span>Redis</span><span>Docker</span><span>TypeScript</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section-shell bg-white dark:bg-slate-950">
+    <section id="experience" class="section-shell bg-slate-950">
       <div class="mx-auto max-w-6xl">
         <div class="section-heading text-center">
           <p>Experience</p>
-          <h2>Production-focused software development</h2>
+          <h2>Real production work across frontend, backend, and databases</h2>
         </div>
         <div class="space-y-6">
           <article class="timeline-card">
             <div class="timeline-meta">
               <h3>Software Developer</h3>
-              <p>Trayistats AI Technologies</p>
-              <span>October 2025 - Present | Noida, Uttar Pradesh, India</span>
+              <p>Trayistats AI Technology Pvt. Ltd.</p>
+              <span>October 2025 - July 2026 | Noida</span>
             </div>
             <ul class="achievement-list">
-              <li>Resolved 100+ production issues across React.js and Node.js applications, improving platform stability and reliability.</li>
-              <li>Developed and deployed 10+ production features for enterprise market research clients.</li>
-              <li>Designed and implemented RESTful APIs using Node.js, Express.js, and Microsoft SQL Server.</li>
-              <li>Optimized complex SQL queries and reporting workflows, reducing report generation time by approximately 35%.</li>
-              <li>Contributed to RabbitMQ-based asynchronous report generation and background processing.</li>
-              <li>Built and enhanced responsive React.js modules for enterprise applications.</li>
-              <li>Participated in code reviews, debugging, testing, deployment support, and production issue resolution.</li>
-              <li>Collaborated with cross-functional teams in an Agile development environment.</li>
-              <li>Refactored existing modules to improve maintainability, performance, and code quality.</li>
+              <li>Developed and maintained enterprise market-research applications using React.js, Node.js, Express.js, JavaScript, and Microsoft SQL Server.</li>
+              <li>Resolved more than 100 production issues through debugging, root-cause analysis, and cross-module investigation.</li>
+              <li>Built and integrated REST APIs supporting admin tools, participant workflows, surveys, reporting, and internal business operations.</li>
+              <li>Optimized SQL queries, joins, and reporting workflows to improve maintainability and application reliability.</li>
+              <li>Contributed to authentication, participant flows, admin tools, survey workflows, reporting, and RabbitMQ-based report-export processing.</li>
+              <li>Collaborated through Git-based workflows, code reviews, issue tracking, and Agile development practices.</li>
             </ul>
           </article>
           <article class="timeline-card">
             <div class="timeline-meta">
               <h3>Software Developer Intern</h3>
-              <p>Trayistats AI Technologies</p>
-              <span>July 2025 - September 2025 | Noida, Uttar Pradesh, India</span>
+              <p>Trayistats AI Technology Pvt. Ltd.</p>
+              <span>July 2025 - September 2025 | Noida</span>
             </div>
             <ul class="achievement-list">
-              <li>Built and maintained REST APIs using Node.js and Express.js.</li>
-              <li>Fixed 30+ frontend and backend issues in live applications.</li>
-              <li>Developed reusable React.js components used in production modules.</li>
-              <li>Assisted in SQL query optimization and API performance improvements.</li>
-              <li>Participated in code reviews, debugging, testing, and feature delivery.</li>
-              <li>Worked closely with senior developers on production-grade software.</li>
+              <li>Contributed to Zunadesk, a JIRA-like task-management application.</li>
+              <li>Contributed to Quick Poll India, a survey-creation and response-management application.</li>
+              <li>Worked on survey publishing, respondent participation, reports, branching logic, quota handling, and over-quota handling.</li>
+              <li>Developed frontend modules and REST API integrations.</li>
+              <li>Fixed defects and improved application behaviour through debugging and testing.</li>
             </ul>
-          </article>
-          <article class="timeline-card timeline-card-secondary">
-            <div class="timeline-meta">
-              <h3>Earlier Experience</h3>
-              <p>Fashion Assistant - Aditya Birla Fashion and Retail Ltd.</p>
-              <span>September 2022 - May 2023</span>
-            </div>
-            <p class="text-slate-600 dark:text-slate-300">Handled customer support, billing operations, and in-store service responsibilities.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section-shell bg-slate-100 dark:bg-slate-900">
+    <section id="skills" class="section-shell bg-slate-900">
+      <div class="mx-auto max-w-6xl">
+        <div class="section-heading text-center">
+          <p>Skills</p>
+          <h2>Structured skills for full stack roles</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <article class="skill-card"><h3>Frontend</h3><div><span>React.js</span><span>Redux Toolkit</span><span>React Router</span><span>Tailwind CSS</span><span>Axios</span><span>HTML5</span><span>CSS3</span><span>Responsive Web Design</span></div></article>
+          <article class="skill-card"><h3>Backend</h3><div><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>JWT Authentication</span><span>Authorization</span><span>MVC</span><span>CRUD</span></div></article>
+          <article class="skill-card"><h3>Databases</h3><div><span>MSSQL</span><span>MongoDB</span><span>Redis</span></div></article>
+          <article class="skill-card"><h3>Tools and DevOps</h3><div><span>Git</span><span>GitHub</span><span>Postman</span><span>Docker</span><span>GitHub Actions</span><span>AWS</span><span>RabbitMQ</span><span>Cloudinary</span><span>Stripe</span><span>Nodemailer</span></div></article>
+          <article class="skill-card"><h3>Languages</h3><div><span>JavaScript</span><span>TypeScript</span><span>SQL</span></div></article>
+          <article class="skill-card"><h3>Practices</h3><div><span>Production Debugging</span><span>Root Cause Analysis</span><span>API Integration</span><span>SQL Optimization</span><span>Agile/Scrum</span><span>Clean and Maintainable Code</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell bg-slate-950">
       <div class="mx-auto max-w-6xl">
         <div class="section-heading text-center">
           <p>Projects</p>
-          <h2>Selected full-stack and frontend work</h2>
+          <h2>Featured project and confirmed portfolio work</h2>
         </div>
-        <div class="grid gap-6 lg:grid-cols-2">
-          <article class="project-card lg:col-span-2">
-            <img src="./media/Scan_My_Meal.png" alt="Scan My Meal food ordering platform dashboard preview" />
-            <div class="space-y-4">
-              <p class="project-eyebrow">Featured Project</p>
-              <h3>Scan My Meal - Full-Stack Food Ordering Platform</h3>
-              <p>Scan My Meal is a production-style full-stack food ordering platform built with the MERN stack. It provides separate user and admin experiences for product browsing, cart management, secure checkout, order processing, profile management, and administrative control.</p>
-              <div class="tag-cloud">
-                <span>React.js</span><span>Redux Toolkit</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>Tailwind CSS</span><span>JWT</span><span>Stripe</span><span>Cloudinary</span><span>Nodemailer</span><span>Framer Motion</span><span>Netlify</span><span>Render</span>
+        <div class="projects-layout">
+          <article class="project-card featured-project">
+            <div class="project-media">
+              <img src="./media/Scan_My_Meal.png" alt="Scan My Meal full-stack food ordering platform preview" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div>
+                <p class="project-eyebrow">Featured MERN Project</p>
+                <h3>Scan My Meal</h3>
               </div>
-              <ul class="achievement-list compact">
-                <li>Developed a production-style MERN stack food ordering application with secure user and admin portals.</li>
-                <li>Designed RESTful APIs for authentication, products, categories, carts, users, and order management.</li>
-                <li>Implemented JWT authentication, role-based access control, email verification, and password recovery.</li>
-                <li>Integrated Stripe for secure online payments and Cloudinary for image management.</li>
-                <li>Built reusable React components using Redux Toolkit and Tailwind CSS.</li>
-                <li>Deployed the frontend on Netlify and backend on Render.</li>
-              </ul>
+              <p>A full-stack food-ordering platform where customers can browse menu items, manage carts, place orders, pay online, and track order status while admins manage categories, products, users, and orders.</p>
+              <div class="feature-grid">
+                <span>JWT auth + roles</span>
+                <span>Stripe + COD checkout</span>
+                <span>Admin dashboard</span>
+                <span>Cloudinary uploads</span>
+                <span>Email workflows</span>
+                <span>QR table route</span>
+              </div>
+              <div class="tag-cloud tag-cloud--featured">
+                <span>React.js</span><span>Redux Toolkit</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Stripe</span><span>Cloudinary</span><span>Tailwind CSS</span>
+              </div>
               <div class="project-actions">
                 <a href="https://scanmymeal.netlify.app/" target="_blank" rel="noopener">Live Demo<i class="ri-external-link-line" aria-hidden="true"></i></a>
+                <a href="https://github.com/rishabh-060/ScanMyMeal" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <img src="./media/Blo_docs.png" alt="Blo-Docs blog application preview" />
-            <div class="space-y-4">
-              <p class="project-eyebrow">Full-Stack Blog Application</p>
+          <article class="project-card project-card--compact">
+            <div class="project-media">
+              <img src="./media/Blo_docs.png" alt="Blo-Docs blog application preview" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-eyebrow">Confirmed Project</p>
               <h3>Blo-Docs</h3>
               <p>A modern blog application that allows users to create, edit, publish, view, and delete posts with authentication and image management.</p>
               <div class="tag-cloud"><span>React.js</span><span>Redux Toolkit</span><span>React Router</span><span>Tailwind CSS</span><span>Appwrite</span><span>React Hook Form</span><span>TinyMCE</span></div>
               <ul class="achievement-list compact">
                 <li>User authentication and public blog browsing.</li>
-                <li>Create, edit, and delete personal posts with featured image upload.</li>
+                <li>Create, edit, and delete personal posts with featured image uploads.</li>
                 <li>Rich text editing, slug-based routes, and responsive layout.</li>
               </ul>
               <div class="project-actions">
                 <a href="https://blo-docs.netlify.app/" target="_blank" rel="noopener">Live Demo<i class="ri-external-link-line" aria-hidden="true"></i></a>
+                <a href="https://github.com/rishabh-060/Blo-docs" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <div class="space-y-4">
-              <p class="project-eyebrow">Professional Work Highlight</p>
-              <h3>Enterprise Market Research Platform</h3>
-              <p>Contributed to enterprise market research applications by building React.js modules, developing Node.js and Express.js APIs, optimizing Microsoft SQL Server queries, resolving production issues, and improving reporting workflows.</p>
-              <div class="tag-cloud"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>Microsoft SQL Server</span><span>RabbitMQ</span><span>REST APIs</span></div>
+          <article class="project-card project-card--compact">
+            <div class="project-icon-panel" aria-hidden="true"><i class="ri-calendar-schedule-line"></i></div>
+            <div class="project-body">
+              <p class="project-eyebrow">Full Stack Dashboard</p>
+              <h3>Job Scheduler & Automation System</h3>
+              <p>A React, Tailwind CSS, Node.js, Express.js, Sequelize, and MySQL dashboard for creating jobs, simulating job runs, tracking execution status, and managing automation workflows.</p>
+              <div class="tag-cloud"><span>React.js</span><span>Tailwind CSS</span><span>Node.js</span><span>Express.js</span><span>Sequelize</span><span>MySQL</span></div>
+              <ul class="achievement-list compact">
+                <li>Built around job creation, execution tracking, and status visibility.</li>
+                <li>Combines a frontend dashboard with backend API-driven workflow handling.</li>
+                <li>Useful for demonstrating full stack CRUD and automation-oriented interface work.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/rishabh-060/Job-Scheduler-Automation-System" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card project-card--compact">
+            <div class="project-icon-panel" aria-hidden="true"><i class="ri-bar-chart-grouped-line"></i></div>
+            <div class="project-body">
+              <p class="project-eyebrow">React UI Project</p>
+              <h3>React Leaderboard</h3>
+              <p>A React.js leaderboard interface focused on user ranking presentation, sticky top positions, and paginated leaderboard results.</p>
+              <div class="tag-cloud"><span>React.js</span><span>JavaScript</span><span>Leaderboard UI</span><span>Pagination</span><span>Responsive UI</span></div>
+              <ul class="achievement-list compact">
+                <li>Displays ranked users with emphasis on top positions.</li>
+                <li>Uses pagination to keep longer ranking lists easier to scan.</li>
+                <li>Shows frontend UI composition and state-driven list rendering.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/rishabh-060/React_Leaderbard" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card project-card--compact">
+            <div class="project-media">
+              <img src="./media/receipe-center.png" alt="Recipe Center web application preview" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-eyebrow">Backend Web App</p>
+              <h3>Recipe Center</h3>
+              <p>A recipe-sharing web application built with Node.js, Express.js, MongoDB, EJS, and Tailwind CSS for creating and browsing recipe content.</p>
+              <div class="tag-cloud"><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>EJS</span><span>Tailwind CSS</span></div>
+              <ul class="achievement-list compact">
+                <li>Server-rendered recipe application with backend route handling.</li>
+                <li>Uses MongoDB for storing recipe-focused application data.</li>
+                <li>Demonstrates Express.js, EJS templates, and Tailwind CSS UI work.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/rishabh-060/Receipe_Center" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card project-card--compact">
+            <div class="project-media">
+              <img src="./media/check-weather.png" alt="Weather application preview" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-eyebrow">JavaScript App</p>
+              <h3>Check Weather</h3>
+              <p>A weather application built with HTML, CSS, and JavaScript that uses a weather API to fetch and display current weather information.</p>
+              <div class="tag-cloud"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Weather API</span></div>
+              <ul class="achievement-list compact">
+                <li>Fetches weather data through an external API.</li>
+                <li>Displays weather information in a simple responsive interface.</li>
+                <li>Demonstrates DOM updates and API-driven frontend logic.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/rishabh-060/Check-Weather-using-JavaScript" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card project-card--compact">
+            <div class="project-media">
+              <img src="./media/emp_sys.png" alt="Employee Management System desktop application preview" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-eyebrow">Python + Database</p>
+              <h3>Employee Management System</h3>
+              <p>A Python and MySQL employee-management project for maintaining employee records and practicing database-backed application workflows.</p>
+              <div class="tag-cloud"><span>Python</span><span>MySQL</span><span>Desktop App</span><span>Database Management</span></div>
+              <ul class="achievement-list compact">
+                <li>Stores and manages employee information through a database-backed workflow.</li>
+                <li>Demonstrates Python application logic and MySQL integration.</li>
+                <li>Built as a practical employee record-management system.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/rishabh-060/Employee_Management_System" target="_blank" rel="noopener">Source Code<i class="ri-github-fill" aria-hidden="true"></i></a>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="education" class="section-shell bg-white dark:bg-slate-950">
+    <section id="education" class="section-shell bg-slate-900">
       <div class="mx-auto max-w-6xl">
         <div class="section-heading text-center">
           <p>Education</p>
@@ -267,89 +381,53 @@
         <div class="grid gap-5 md:grid-cols-2">
           <article class="info-card">
             <i class="ri-graduation-cap-line" aria-hidden="true"></i>
-            <h3>Master of Computer Applications (MCA)</h3>
+            <h3>Master of Computer Applications</h3>
             <p>Shri Ramswaroop Memorial University</p>
-            <span>2023 - 2025 | Barabanki, Uttar Pradesh</span>
+            <span>2023 - 2025</span>
           </article>
           <article class="info-card">
             <i class="ri-bank-line" aria-hidden="true"></i>
             <h3>Bachelor of Science in Computer Applications</h3>
             <p>Brahmanand PG College</p>
-            <span>2020 - 2023 | Kanpur, Uttar Pradesh</span>
+            <span>2020 - 2023</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="certifications" class="section-shell bg-slate-100 dark:bg-slate-900">
+    <section id="contact" class="section-shell bg-slate-950">
       <div class="mx-auto max-w-6xl">
         <div class="section-heading text-center">
-          <p>Certifications</p>
-          <h2>Relevant training</h2>
+          <p>Contact</p>
+          <h2>Direct contact actions for recruiters and hiring teams</h2>
         </div>
-        <div class="grid gap-5 md:grid-cols-2">
-          <article class="info-card">
-            <i class="ri-award-line" aria-hidden="true"></i>
-            <h3>Web Development Fundamentals</h3>
-            <p>IBM</p>
-          </article>
-          <article class="info-card">
-            <i class="ri-code-box-line" aria-hidden="true"></i>
-            <h3>Python Programming Training</h3>
-            <p>Coding Blocks, Lucknow</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section-shell bg-white dark:bg-slate-950">
-      <div class="section-heading text-center">
-        <p>Contact</p>
-        <h2>Available for Full-Stack, MERN, React.js, Node.js, and Software Developer roles</h2>
-      </div>
-      <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="mb-6 leading-8 text-slate-600 dark:text-slate-300">
-            Looking for a Full-Stack, MERN Stack, React.js, Node.js, or Software Developer opportunity? I am currently available as an immediate joiner and open to discussing roles where I can contribute to scalable web products.
+        <div class="contact-panel">
+          <p>
+            I am available as an immediate joiner for Full Stack Developer, React.js Developer, Node.js Developer, MERN Stack Developer, Frontend Developer, and Backend Developer roles.
           </p>
-          <div class="contact-list">
-            <a href="mailto:verma.rishabh924@gmail.com"><i class="ri-mail-line" aria-hidden="true"></i>verma.rishabh924@gmail.com</a>
-            <a href="tel:+918881343585"><i class="ri-phone-line" aria-hidden="true"></i>+91 8881343585</a>
-            <a href="https://www.linkedin.com/in/rishabh-verma-277530223" target="_blank" rel="noopener"><i class="ri-linkedin-box-fill" aria-hidden="true"></i>LinkedIn</a>
-            <a href="https://github.com/rishabh-060" target="_blank" rel="noopener"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
-            <span><i class="ri-map-pin-line" aria-hidden="true"></i>Noida, Uttar Pradesh, India</span>
+          <div class="contact-actions" aria-label="Contact links">
+            <a href="mailto:verma.rishabh924@gmail.com" class="contact-action"><i class="ri-mail-line" aria-hidden="true"></i><span>Email</span><strong>verma.rishabh924@gmail.com</strong></a>
+            <a href="https://www.linkedin.com/in/rishabh-verma-277530223" target="_blank" rel="noopener" class="contact-action"><i class="ri-linkedin-box-fill" aria-hidden="true"></i><span>LinkedIn</span><strong>rishabh-verma-277530223</strong></a>
+            <a href="https://github.com/rishabh-060" target="_blank" rel="noopener" class="contact-action"><i class="ri-github-fill" aria-hidden="true"></i><span>GitHub</span><strong>github.com/rishabh-060</strong></a>
+            <a href="https://rishabh-060.netlify.app/" target="_blank" rel="noopener" class="contact-action"><i class="ri-global-line" aria-hidden="true"></i><span>Portfolio</span><strong>rishabh-060.netlify.app</strong></a>
+            <a href="./media/Rishabh-Verma-Full-Stack-Developer-Resume.pdf" target="_blank" rel="noopener" download="Rishabh-Verma-Full-Stack-Developer-Resume.pdf" class="contact-action"><i class="ri-download-2-line" aria-hidden="true"></i><span>Resume</span><strong>Download PDF</strong></a>
+            <button type="button" id="copy-email" class="contact-action"><i class="ri-file-copy-line" aria-hidden="true"></i><span>Copy Email</span><strong>Copy to clipboard</strong></button>
           </div>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
         </div>
-        <form id="contact-form" class="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900" novalidate>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" required autocomplete="name" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" required autocomplete="email" />
-            </label>
-          </div>
-          <label>
-            <span>Subject</span>
-            <input type="text" name="subject" required />
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button type="submit" id="contact-submit" class="btn-primary w-full justify-center">
-            <i class="ri-send-plane-line" aria-hidden="true"></i>Open Email App
-          </button>
-          <p id="form-status" class="mt-4 min-h-6 text-sm font-medium" role="status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 
-    <footer class="border-t border-slate-200 bg-slate-50 px-6 py-6 text-center text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
-      <p>Rishabh Verma | Software Developer | verma.rishabh924@gmail.com</p>
-      <p class="mt-1">&copy; 2026 Rishabh Verma. All rights reserved.</p>
+    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-6 text-sm text-slate-400">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>Rishabh Verma | Full Stack Developer | <span id="current-year">2026</span></p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://github.com/rishabh-060" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/rishabh-verma-277530223" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="mailto:verma.rishabh924@gmail.com" class="footer-link">Email</a>
+          <a href="#hero" class="footer-link">Back to top</a>
+        </div>
+      </div>
     </footer>
   </main>
 
