@@ -3,43 +3,52 @@ const themeIcon = document.getElementById("theme-icon");
 const menuToggle = document.getElementById("menu-toggle");
 const sidebar = document.querySelector("aside");
 const navLinks = document.querySelectorAll(".nav-link");
-const contactForm = document.getElementById("contact-form");
-const contactSubmit = document.getElementById("contact-submit");
-const formStatus = document.getElementById("form-status");
+const copyEmailButton = document.getElementById("copy-email");
+const copyStatus = document.getElementById("copy-status");
+const currentYear = document.getElementById("current-year");
+const emailAddress = "verma.rishabh924@gmail.com";
 
-const setThemeIcon = (isDark) => {
+const setThemeIcon = (isLight) => {
   if (!themeIcon) return;
-  themeIcon.classList.toggle("ri-moon-line", !isDark);
-  themeIcon.classList.toggle("ri-sun-line", isDark);
+  themeIcon.classList.toggle("ri-sun-line", !isLight);
+  themeIcon.classList.toggle("ri-moon-line", isLight);
 };
 
-const preferredDark =
-  localStorage.getItem("theme") === "dark" ||
-  (!localStorage.getItem("theme") &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-document.documentElement.classList.toggle("dark", preferredDark);
-setThemeIcon(preferredDark);
+const savedTheme = localStorage.getItem("theme");
+const useLightTheme = savedTheme === "light";
+document.body.classList.toggle("light-theme", useLightTheme);
+document.documentElement.classList.toggle("dark", !useLightTheme);
+setThemeIcon(useLightTheme);
 
 themeToggle?.addEventListener("click", () => {
-  const isDark = document.documentElement.classList.toggle("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  setThemeIcon(isDark);
+  const isLight = document.body.classList.toggle("light-theme");
+  document.documentElement.classList.toggle("dark", !isLight);
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+  setThemeIcon(isLight);
 });
 
+const closeMobileMenu = () => {
+  sidebar?.classList.add("-translate-x-full");
+  menuToggle?.setAttribute("aria-expanded", "false");
+};
+
 menuToggle?.addEventListener("click", () => {
-  const isOpen = !sidebar.classList.contains("-translate-x-full");
-  sidebar.classList.toggle("-translate-x-full", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  if (!sidebar) return;
+  const isOpening = sidebar.classList.contains("-translate-x-full");
+  sidebar.classList.toggle("-translate-x-full", !isOpening);
+  menuToggle.setAttribute("aria-expanded", String(isOpening));
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    if (window.innerWidth < 1024) {
-      sidebar.classList.add("-translate-x-full");
-      menuToggle?.setAttribute("aria-expanded", "false");
-    }
+    if (window.innerWidth < 1024) closeMobileMenu();
   });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && window.innerWidth < 1024) {
+    closeMobileMenu();
+  }
 });
 
 const sections = [...document.querySelectorAll("main section[id]")];
@@ -60,7 +69,24 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => observer.observe(section));
 
-if (window.gsap && window.ScrollTrigger) {
+copyEmailButton?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(emailAddress);
+    if (copyStatus) copyStatus.textContent = "Email copied to clipboard.";
+  } catch {
+    if (copyStatus) {
+      copyStatus.textContent = `Copy failed. Email me directly at ${emailAddress}.`;
+    }
+  }
+});
+
+if (currentYear) {
+  currentYear.textContent = String(new Date().getFullYear());
+}
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion && window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
   const mm = gsap.matchMedia();
@@ -69,71 +95,43 @@ if (window.gsap && window.ScrollTrigger) {
     gsap.fromTo(
       "#sidebar, #site-logo",
       { x: "-18%", opacity: 0 },
-      { x: "0%", opacity: 1, duration: 0.8, ease: "power3.out" }
+      { x: "0%", opacity: 1, duration: 0.7, ease: "power3.out" }
     );
   });
 
   window.addEventListener("load", () => {
-    const timeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
+    const timeline = gsap.timeline({ defaults: { duration: 0.75, ease: "power3.out" } });
     timeline
-      .from("#hero .space-y-7 > *", { y: 24, opacity: 0, stagger: 0.12 })
-      .from("#hero img", { y: 24, opacity: 0, scale: 0.96 }, "-=0.35");
+      .from("#hero .status-pill", { y: 14, opacity: 0, stagger: 0.08 })
+      .from("#hero h1, #hero h2", { y: 24, opacity: 0, stagger: 0.08 }, "-=0.2")
+      .from("#hero p, #hero .btn-primary, #hero .btn-secondary, #hero .btn-ghost", { y: 18, opacity: 0, stagger: 0.06 }, "-=0.25")
+      .from("#hero img, #hero .snapshot-list li", { y: 22, opacity: 0, scale: 0.98, stagger: 0.07 }, "-=0.25");
   });
 
-  gsap.utils.toArray(".stat-card, .skill-card, .timeline-card, .project-card, .info-card").forEach((card) => {
+  gsap.utils.toArray(".section-heading").forEach((heading) => {
+    gsap.from(heading.children, {
+      scrollTrigger: {
+        trigger: heading,
+        start: "top 86%",
+      },
+      y: 18,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.55,
+      ease: "power2.out",
+    });
+  });
+
+  gsap.utils.toArray(".stat-card, .skill-card, .timeline-card, .project-card, .info-card, .contact-action").forEach((card) => {
     gsap.from(card, {
       scrollTrigger: {
         trigger: card,
         start: "top 88%",
       },
-      y: 28,
+      y: 24,
       opacity: 0,
-      duration: 0.65,
+      duration: 0.58,
       ease: "power2.out",
     });
   });
 }
-
-contactForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  if (contactSubmit.disabled) return;
-
-  const formData = new FormData(contactForm);
-  const name = String(formData.get("name") || "").trim();
-  const email = String(formData.get("email") || "").trim();
-  const subject = String(formData.get("subject") || "").trim();
-  const message = String(formData.get("message") || "").trim();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!name || !email || !subject || !message) {
-    formStatus.textContent = "Please fill in all required fields.";
-    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-red-600";
-    return;
-  }
-
-  if (!emailPattern.test(email)) {
-    formStatus.textContent = "Please enter a valid email address.";
-    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-red-600";
-    return;
-  }
-
-  contactSubmit.disabled = true;
-  contactSubmit.innerHTML = '<i class="ri-loader-4-line animate-spin" aria-hidden="true"></i>Preparing Email';
-  formStatus.textContent = "Opening your email app...";
-  formStatus.className = "mt-4 min-h-6 text-sm font-medium text-blue-600";
-
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\n${message}`
-  );
-  const mailto = `mailto:verma.rishabh924@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-  window.location.href = mailto;
-
-  window.setTimeout(() => {
-    formStatus.textContent = "Message prepared. If your email app did not open, email me directly at verma.rishabh924@gmail.com.";
-    formStatus.className = "mt-4 min-h-6 text-sm font-medium text-emerald-600";
-    contactSubmit.disabled = false;
-    contactSubmit.innerHTML = '<i class="ri-send-plane-line" aria-hidden="true"></i>Open Email App';
-  }, 1200);
-});
